@@ -148,6 +148,13 @@
   margin: 10px;
 }
 
+.centermobile {
+  margin: auto;
+  width: 55%;
+  padding: 5px;
+  margin: 5px;
+}
+
 .centertext {
   margin: auto;
   width: 250%;

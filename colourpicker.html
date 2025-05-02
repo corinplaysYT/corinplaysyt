@@ -169,7 +169,48 @@
 		
 		<h1 class="centertext">Colour Picker</h1>
 		
-		<div class="center">
+		<div class="center d-none d-md-block">
+			<div class="container center">
+				<div class="color-display" id="colorDisplay"></div>
+				
+				<div class="rgbtext slider-container">
+					<label for="redSlider" style="color: #d32f2f;">Red (R):</label>
+					<div class="slider-row">
+						<input type="range" id="redSlider" class="red-slider" min="0" max="255" value="255">
+						<input type="number" id="redValue" min="0" max="255" value="255">
+					</div>
+				</div>
+				
+				<div class="rgbtext slider-container">
+					<label for="greenSlider" style="color: #388e3c;">Green (G):</label>
+					<div class="slider-row">
+						<input type="range" id="greenSlider" class="green-slider" min="0" max="255" value="0">
+						<input type="number" id="greenValue" min="0" max="255" value="0">
+					</div>
+				</div>
+				
+				<div class="rgbtext slider-container">
+					<label for="blueSlider" style="color: #1976d2;">Blue (B):</label>
+					<div class="slider-row">
+						<input type="range" id="blueSlider" class="blue-slider" min="0" max="255" value="0">
+						<input type="number" id="blueValue" min="0" max="255" value="0">
+					</div>
+				</div>
+				
+				<div class="color-code">
+					<input type="text" id="rgbValue" value="rgb(255, 0, 0)" readonly>
+					<button id="copyButton" class="copy-button">Copy</button>
+				</div>
+				
+				<div class="color-code">
+					<input type="text" id="hexValue" value="#FF0000" readonly>
+					<button id="copyHexButton" class="copy-button">Copy</button>
+				</div>
+			</div>
+			
+			<div class="notification" id="notification">Color code copied to clipboard!</div>
+		</div>
+		<div class="center d-block d-md-none">
 			<div class="container center">
 				<div class="color-display" id="colorDisplay"></div>
 				
@@ -303,38 +344,38 @@
 				// Update RGB text value
 				rgbValue.value = `rgb(${red}, ${green}, ${blue})`;
 				
-			// Update HEX text value
-			hexValue.value = rgbToHex(red, green, blue);
-		}
-		
-		// Function to convert RGB to HEX
-		function rgbToHex(r, g, b) {
-			return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-		}
-		
-		function componentToHex(c) {
-			const hex = c.toString(16);
-			return hex.length == 1 ? "0" + hex : hex;
-		}
-		
-		// Function to copy text to clipboard
-		function copyToClipboard(text) {
-			const textarea = document.createElement('textarea');
-			textarea.value = text;
-			document.body.appendChild(textarea);
-			textarea.select();
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-		}
-		
-		// Function to show notification
-		function showNotification() {
-			notification.classList.add('show-notification');
+				// Update HEX text value
+				hexValue.value = rgbToHex(red, green, blue);
+			}
 			
-			setTimeout(function() {
-				notification.classList.remove('show-notification');
-			}, 2000);
-		}
+			// Function to convert RGB to HEX
+			function rgbToHex(r, g, b) {
+				return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+			}
+			
+			function componentToHex(c) {
+				const hex = c.toString(16);
+				return hex.length == 1 ? "0" + hex : hex;
+			}
+			
+			// Function to copy text to clipboard
+			function copyToClipboard(text) {
+				const textarea = document.createElement('textarea');
+				textarea.value = text;
+				document.body.appendChild(textarea);
+				textarea.select();
+				document.execCommand('copy');
+				document.body.removeChild(textarea);
+			}
+			
+			// Function to show notification
+			function showNotification() {
+				notification.classList.add('show-notification');
+				
+				setTimeout(function() {
+					notification.classList.remove('show-notification');
+				}, 2000);
+			}
 		</script>
 	</body>
 </html>		
