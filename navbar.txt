@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg">
+			<div class="container text-center" style="border: 2px solid black;">
+				<div class="row" style="border: 2px solid black;">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarSupportedContent" aria-controls="NavbarSupportedContent" aria-expanded="false" aria-label="toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="NavbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><div class="col navbar-brand"><a class="nav-link navtext" href="index.html"><h1>Home</h1></a></div></li>
+							<li class="nav-item">
+								<div class="col"><a class="nav-link navtext" href="download.html"><h1>Downloads</h1></a></div>
+							</li>
+							<li class="nav-item">
+								<div class="col"><a class="nav-link navtext" href="https://www.youtube.com/@StupidSmol/videos" target="_blank"><h1>Channel</h1></a></div>
+							</li>
+							<li class="nav-item">
+								<div class="col"><a class="nav-link navtext" href="https://www.google.com/search?q=where+was+the+hamburger+invented%3F&client=opera-gx&hs=tMR&sca_esv=69ac19332292058f&sxsrf=AHTn8zpyc8Y0lJDNUAy5QPfW8pjCgivJaA%3A1745839576097&ei=2GUPaPDeBdeehbIPiYv7IA&ved=0ahUKEwjwqpKez_qMAxVXT0EAHYnFHgQQ4dUDCBA&uact=5&oq=where+was+the+hamburger+invented%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiIXdoZXJlIHdhcyB0aGUgaGFtYnVyZ2VyIGludmVudGVkPzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI3S9QAFjCLnABeAGQAQCYAf8CoAG-JqoBCDE3LjcuNy4zuAEDyAEA-AEBmAIjoALdKsICBBAjGCfCAgoQIxiABBgnGIoFwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICCxAuGIAEGLEDGIMBwgIKEAAYgAQYQxiKBcICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAhAQABiABBixAxhDGIMBGIoFwgIHECMYsQIYJ8ICCxAAGIAEGJECGIoFwgIHEAAYgAQYCsICCBAAGIAEGLEDwgIEEAAYA8ICDhAAGIAEGLEDGIMBGIoFwgILEC4YgAQYsQMY1ALCAgoQABiABBgUGIcCwgIIEAAYgAQYxwOYAwCSBwoxNy42LjguMy4xoAfR8gGyBwoxNi42LjguMy4xuAfFKg&sclient=gws-wiz-serp" target="_blank"><h1>Hamburg</h1></a></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
