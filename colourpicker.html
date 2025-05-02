@@ -145,7 +145,7 @@
 		
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 	</head>
-	<body class="bkgpage">
+	<body class="bkgpage center">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container" style="border: 2px solid black; background-color:white;">
 				<a class="navbar-brand" href="index.html" aria-label="Home Link">
@@ -166,175 +166,175 @@
 				</div>
 			</div>
 		</nav>	
-	</body>
-</html>
-<body>
-    <h1>Color Picker</h1>
-    
-    <div class="container center">
-        <div class="color-display" id="colorDisplay"></div>
-        
-        <div class="rgbtext slider-container">
-            <label for="redSlider" style="color: #d32f2f;">Red (R):</label>
-            <div class="slider-row">
-                <input type="range" id="redSlider" class="red-slider" min="0" max="255" value="255">
-                <input type="number" id="redValue" min="0" max="255" value="255">
+		
+		<h1 class="centertext">Colour Picker</h1>
+		
+		<div class="center">
+			<div class="container center">
+				<div class="color-display" id="colorDisplay"></div>
+				
+				<div class="rgbtext slider-container">
+					<label for="redSlider" style="color: #d32f2f;">Red (R):</label>
+					<div class="slider-row">
+						<input type="range" id="redSlider" class="red-slider" min="0" max="255" value="255">
+						<input type="number" id="redValue" min="0" max="255" value="255">
+					</div>
+				</div>
+				
+				<div class="rgbtext slider-container">
+					<label for="greenSlider" style="color: #388e3c;">Green (G):</label>
+					<div class="slider-row">
+						<input type="range" id="greenSlider" class="green-slider" min="0" max="255" value="0">
+						<input type="number" id="greenValue" min="0" max="255" value="0">
+					</div>
+				</div>
+				
+				<div class="rgbtext slider-container">
+					<label for="blueSlider" style="color: #1976d2;">Blue (B):</label>
+					<div class="slider-row">
+						<input type="range" id="blueSlider" class="blue-slider" min="0" max="255" value="0">
+						<input type="number" id="blueValue" min="0" max="255" value="0">
+					</div>
+				</div>
+				
+				<div class="color-code">
+					<input type="text" id="rgbValue" value="rgb(255, 0, 0)" readonly>
+					<button id="copyButton" class="copy-button">Copy</button>
+				</div>
+				
+				<div class="color-code">
+					<input type="text" id="hexValue" value="#FF0000" readonly>
+					<button id="copyHexButton" class="copy-button">Copy</button>
+				</div>
 			</div>
+			
+			<div class="notification" id="notification">Color code copied to clipboard!</div>
 		</div>
-        
-        <div class="rgbtext slider-container">
-            <label for="greenSlider" style="color: #388e3c;">Green (G):</label>
-            <div class="slider-row">
-                <input type="range" id="greenSlider" class="green-slider" min="0" max="255" value="0">
-                <input type="number" id="greenValue" min="0" max="255" value="0">
-			</div>
-		</div>
-        
-        <div class="rgbtext slider-container">
-            <label for="blueSlider" style="color: #1976d2;">Blue (B):</label>
-            <div class="slider-row">
-                <input type="range" id="blueSlider" class="blue-slider" min="0" max="255" value="0">
-                <input type="number" id="blueValue" min="0" max="255" value="0">
-			</div>
-		</div>
-        
-        <div class="color-code">
-            <input type="text" id="rgbValue" value="rgb(255, 0, 0)" readonly>
-            <button id="copyButton" class="copy-button">Copy</button>
-		</div>
-        
-        <div class="color-code">
-            <input type="text" id="hexValue" value="#FF0000" readonly>
-            <button id="copyHexButton" class="copy-button">Copy</button>
-		</div>
-	</div>
-    
-    <div class="notification" id="notification">Color code copied to clipboard!</div>
-    
-    <script>
-        // Get all necessary DOM elements
-        const colorDisplay = document.getElementById('colorDisplay');
-        const redSlider = document.getElementById('redSlider');
-        const redValue = document.getElementById('redValue');
-        const greenSlider = document.getElementById('greenSlider');
-        const greenValue = document.getElementById('greenValue');
-        const blueSlider = document.getElementById('blueSlider');
-        const blueValue = document.getElementById('blueValue');
-        const rgbValue = document.getElementById('rgbValue');
-        const hexValue = document.getElementById('hexValue');
-        const copyButton = document.getElementById('copyButton');
-        const copyHexButton = document.getElementById('copyHexButton');
-        const notification = document.getElementById('notification');
-        
-        // Initial color update
-        updateColor();
-        
-        // Event listeners for sliders
-        redSlider.addEventListener('input', function() {
-            redValue.value = this.value;
-            updateColor();
-		});
-        
-        greenSlider.addEventListener('input', function() {
-            greenValue.value = this.value;
-            updateColor();
-		});
-        
-        blueSlider.addEventListener('input', function() {
-            blueValue.value = this.value;
-            updateColor();
-		});
-        
-        // Event listeners for number inputs
-        redValue.addEventListener('input', function() {
-            // Ensure value is between 0 and 255
-            let value = parseInt(this.value);
-            if (isNaN(value)) value = 0;
-            if (value < 0) value = 0;
-            if (value > 255) value = 255;
-            
-            this.value = value;
-            redSlider.value = value;
-            updateColor();
-		});
-        
-        greenValue.addEventListener('input', function() {
-            let value = parseInt(this.value);
-            if (isNaN(value)) value = 0;
-            if (value < 0) value = 0;
-            if (value > 255) value = 255;
-            
-            this.value = value;
-            greenSlider.value = value;
-            updateColor();
-		});
-        
-        blueValue.addEventListener('input', function() {
-            let value = parseInt(this.value);
-            if (isNaN(value)) value = 0;
-            if (value < 0) value = 0;
-            if (value > 255) value = 255;
-            
-            this.value = value;
-            blueSlider.value = value;
-            updateColor();
-		});
-        
-        // Copy button event listeners
-        copyButton.addEventListener('click', function() {
-            copyToClipboard(rgbValue.value);
-            showNotification();
-		});
-        
-        copyHexButton.addEventListener('click', function() {
-            copyToClipboard(hexValue.value);
-            showNotification();
-		});
-        
-        // Function to update the color display and values
-        function updateColor() {
-            const red = parseInt(redSlider.value);
-            const green = parseInt(greenSlider.value);
-            const blue = parseInt(blueSlider.value);
-            
-            // Update color display
-            colorDisplay.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-            
-            // Update RGB text value
-            rgbValue.value = `rgb(${red}, ${green}, ${blue})`;
-            
-            // Update HEX text value
-            hexValue.value = rgbToHex(red, green, blue);
+		
+		<script>
+			// Get all necessary DOM elements
+			const colorDisplay = document.getElementById('colorDisplay');
+			const redSlider = document.getElementById('redSlider');
+			const redValue = document.getElementById('redValue');
+			const greenSlider = document.getElementById('greenSlider');
+			const greenValue = document.getElementById('greenValue');
+			const blueSlider = document.getElementById('blueSlider');
+			const blueValue = document.getElementById('blueValue');
+			const rgbValue = document.getElementById('rgbValue');
+			const hexValue = document.getElementById('hexValue');
+			const copyButton = document.getElementById('copyButton');
+			const copyHexButton = document.getElementById('copyHexButton');
+			const notification = document.getElementById('notification');
+			
+			// Initial color update
+			updateColor();
+			
+			// Event listeners for sliders
+			redSlider.addEventListener('input', function() {
+				redValue.value = this.value;
+				updateColor();
+			});
+			
+			greenSlider.addEventListener('input', function() {
+				greenValue.value = this.value;
+				updateColor();
+			});
+			
+			blueSlider.addEventListener('input', function() {
+				blueValue.value = this.value;
+				updateColor();
+			});
+			
+			// Event listeners for number inputs
+			redValue.addEventListener('input', function() {
+				// Ensure value is between 0 and 255
+				let value = parseInt(this.value);
+				if (isNaN(value)) value = 0;
+				if (value < 0) value = 0;
+				if (value > 255) value = 255;
+				
+				this.value = value;
+				redSlider.value = value;
+				updateColor();
+			});
+			
+			greenValue.addEventListener('input', function() {
+				let value = parseInt(this.value);
+				if (isNaN(value)) value = 0;
+				if (value < 0) value = 0;
+				if (value > 255) value = 255;
+				
+				this.value = value;
+				greenSlider.value = value;
+				updateColor();
+			});
+			
+			blueValue.addEventListener('input', function() {
+				let value = parseInt(this.value);
+				if (isNaN(value)) value = 0;
+				if (value < 0) value = 0;
+				if (value > 255) value = 255;
+				
+				this.value = value;
+				blueSlider.value = value;
+				updateColor();
+			});
+			
+			// Copy button event listeners
+			copyButton.addEventListener('click', function() {
+				copyToClipboard(rgbValue.value);
+				showNotification();
+			});
+			
+			copyHexButton.addEventListener('click', function() {
+				copyToClipboard(hexValue.value);
+				showNotification();
+			});
+			
+			// Function to update the color display and values
+			function updateColor() {
+				const red = parseInt(redSlider.value);
+				const green = parseInt(greenSlider.value);
+				const blue = parseInt(blueSlider.value);
+				
+				// Update color display
+				colorDisplay.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+				
+				// Update RGB text value
+				rgbValue.value = `rgb(${red}, ${green}, ${blue})`;
+				
+			// Update HEX text value
+			hexValue.value = rgbToHex(red, green, blue);
 		}
-        
-        // Function to convert RGB to HEX
-        function rgbToHex(r, g, b) {
-            return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+		
+		// Function to convert RGB to HEX
+		function rgbToHex(r, g, b) {
+			return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 		}
-        
-        function componentToHex(c) {
-            const hex = c.toString(16);
-            return hex.length == 1 ? "0" + hex : hex;
+		
+		function componentToHex(c) {
+			const hex = c.toString(16);
+			return hex.length == 1 ? "0" + hex : hex;
 		}
-        
-        // Function to copy text to clipboard
-        function copyToClipboard(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
+		
+		// Function to copy text to clipboard
+		function copyToClipboard(text) {
+			const textarea = document.createElement('textarea');
+			textarea.value = text;
+			document.body.appendChild(textarea);
+			textarea.select();
+			document.execCommand('copy');
+			document.body.removeChild(textarea);
 		}
-        
-        // Function to show notification
-        function showNotification() {
-            notification.classList.add('show-notification');
-            
-            setTimeout(function() {
-                notification.classList.remove('show-notification');
+		
+		// Function to show notification
+		function showNotification() {
+			notification.classList.add('show-notification');
+			
+			setTimeout(function() {
+				notification.classList.remove('show-notification');
 			}, 2000);
 		}
-	</script>
-</body>
-</html>
+		</script>
+	</body>
+</html>		

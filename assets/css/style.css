@@ -143,8 +143,12 @@
 
 .center {
   margin: auto;
-  width: 50%;
-  border: 3px solid black;
+  width: 250%;
   padding: 10px;
   margin: 10px;
+}
+
+.centertext {
+  margin: auto;
+  width: 250%;
 }
