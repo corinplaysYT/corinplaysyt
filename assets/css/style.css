@@ -31,6 +31,11 @@
 	font-size: 1.25em;
 }
 
+.rgbtext {
+	font-family: MEL;
+	font-size: 0.75em;
+}
+
 .smbtext {
 	font-family: SMB;
 	font-size: 0.75em;
@@ -134,4 +139,12 @@
 
 .dropsize:hover {
 	border-color: pink;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
+  margin: 10px;
 }
